@@ -27,35 +27,20 @@ int _printf(const char *format, ...)
 		{
 			format++;
 
-			if (*format == 'c')
+			if (*format == 'c' || *format == '%')
 			{
 				char ch = va_arg(arg, int);
 
-			putchar(ch);
-			count++;
+				putchar(ch);
+				count++;
 			}
 
 			else if (*format == 's')
 			{
 				char *str = va_arg(arg, char *);
-				
-				while (*str != '\0')
-				{
-					putchar(*str);
-					str++;
-					count++;
 
-				}
-				
+				count = print_string(str);
 			}
-
-			else if (*format == '%')
-			{
-				putchar('%');
-				count++;
-			}
-
-		
 		}
 		else
 		{
