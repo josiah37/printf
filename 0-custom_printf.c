@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 		{
 			format++;
 
-			if (*format == 'c' || *format == '%')
+			if (*format == 'c')
 			{
 				char ch = va_arg(arg, int);
 
@@ -40,6 +40,12 @@ int _printf(const char *format, ...)
 				char *str = va_arg(arg, char *);
 
 				count = print_string(str);
+			}
+
+			else if (*format == '%')
+			{
+				putchar('%');
+				count++;
 			}
 		}
 		else
