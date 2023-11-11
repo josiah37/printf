@@ -3,9 +3,11 @@
 #include <unistd.h>
 #include <stdio.h>
 #include "main.h"
+
 /**
  * _printf - print formated string into the standard console (stdout)
- *@format: format string
+ * @format: format string
+ *
  * Return: number of char printed or -1 incase of failure
  */
 
