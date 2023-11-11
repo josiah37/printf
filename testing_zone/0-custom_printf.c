@@ -39,15 +39,13 @@ int _printf(const char *format, ...)
 			}
 
 			else if (*format == '%')
-			{
 				putchar(*format);
 
-			}
 		}
 		else
 		{
 			putchar(*format);
-			count++;	
+			count++;
 		}
 
 		format++;
