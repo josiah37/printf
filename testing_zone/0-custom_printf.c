@@ -1,5 +1,6 @@
 #include <stdarg.h>
-#include <strlen.h>
+#include <string.h>
+#include <unistd.h>
 #include "main.h"
 
 /**
@@ -11,8 +12,15 @@
 
 int _printf(const char *format, ...)
 {
+	int count = 0;
+	int result = 0;
+	va_list arg;
+
 	if (format == NULL)
 		return (-1);
+
+
+	va_start(arg, format);
 
 	while (*format != '\0')
 
@@ -22,22 +30,32 @@ int _printf(const char *format, ...)
 			format++;
 
 			if (*format == 'c')
+		
 			{ 
-				
+			
+			 _putchar((char)va_arg(arg, int));
+			count = count + result;
+
 			}
 
 			else if (*format == 's')
 			{
+			  print_string(va_arg(arg, char *));
+			  count = count + result;
 			}
 
 			else if (*format == '%')
 			{
+			
+			_putchar((char)va_arg(arg, int ));
+			count = count + result;
+
 			}
 		}
 
+		format++;
+	}
 
-
-
-
-	return (strlen(format));
+	va_end(arg);
+	return (count);
 }
