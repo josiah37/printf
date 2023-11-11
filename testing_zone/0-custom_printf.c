@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include <strlen.h>
+#include <unistd.h>
 #include "main.h"
-
 /**
  * _printf - print formated string into the standard console (stdout)
  * @format: format string 
