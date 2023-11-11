@@ -11,6 +11,9 @@
  * Return: number of char printed or -1 incase of failure
  */
 
+
+int print_string(char *str);
+
 int _printf(const char *format, ...)
 {
 	int count = 0;
@@ -57,4 +60,25 @@ int _printf(const char *format, ...)
 	}
 	va_end(arg);
 	return (count);
+}
+
+/**
+ * print_string - print string into stdout
+ * @str: string pointe
+ *
+ * Return: number of chat
+ */
+
+int print_string(char *str)
+{
+        int count = 0;
+
+        while (*str != '\0')
+        {
+                putchar(*str);
+                str++;
+                count++;
+        }
+
+        return (count);
 }
