@@ -2,17 +2,21 @@
 #include "main.h"
 int print_int(va_list arg)
 {
-       char *num  = va_arg(arg, int *);
+    int count = 0;
+    int num = va_arg(arg, int);
+    char buffer[50]; // Buffer to store the string representation of the integer
 
-        if (num == NULL || *num == '\0')
-                return (count);
+    sprintf(buffer, "%d", num); // Convert the integer to a string using sprintf
 
-        while (*num != '\0')
-        {
-                putchar(*num);
-                num++;
-                count++;
-        }
+    char *ptr = buffer; // Pointer to iterate over the string
 
-        return (count);
+    while (*ptr != '\0')
+    {
+        putchar(*ptr);
+        ptr++;
+        count++;
+    }
+
+    return count;
 }
+
