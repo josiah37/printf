@@ -39,6 +39,11 @@ int _printf(const char *format, ...)
 			{
 				count = count + print_modulo();
 			}
+			else if (*format != 'd' && *format != 'i')
+			{
+				count = count + print_modulo();
+				putchar(*format);
+			}
 		}
 		else
 		{
