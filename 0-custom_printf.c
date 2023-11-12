@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 			{
 				count = count + print_modulo();
 			}
-			else if (*format != 'd' && *format != 'i')
+			else if (*format == 'r')
 			{
 				count = count + print_modulo();
 				putchar(*format);
