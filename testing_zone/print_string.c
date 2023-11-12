@@ -1,17 +1,23 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * print_string - print string into the standard output  (stdout)
- * @str: string to be printed
+ * print_string - print string into stdout
+ * @str: string pointe
  *
- * Return: nothing
+ * Return: number of chat
  */
 
 int print_string(char *str)
 {
-	if (str == NULL)
-		return (-1);
+	int count = 0;
 
-	return(write(1, &str, strlen(str)));
-	
+	while (*str != '\0')
+	{
+		putchar(*str);
+		str++;
+		count++;
+	}
+
+	return (count);
 }

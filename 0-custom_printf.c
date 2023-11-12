@@ -7,7 +7,7 @@
 /**
  * _printf - print formated string into the standard console (stdout)
  * @format: format string
- *
+ * @str: string
  * Return: number of char printed or -1 incase of failure
  */
 
@@ -32,7 +32,19 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 's')
 			{
+<<<<<<< HEAD
 				count = count + print_string(arg);
+=======
+				char *str = va_arg(arg, char *);
+
+				while (*str != '\0')
+				{
+					putchar(*str);
+					str++;
+					count++;
+				}
+
+>>>>>>> 01d0507920daeaeaa753a59cc1f14d704ff7c9f6
 			}
 			else if  (*format == '%')
 			{
