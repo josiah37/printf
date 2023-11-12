@@ -13,7 +13,7 @@ int print_string(va_list arg)
 	int count = 0;
 	char *str = va_arg(arg, char *);
 	
-	if (str == NULL || *str == "")
+	if (str == NULL || *str == '\0')
 		return (count);
 
 	while (*str != '\0')
