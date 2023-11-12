@@ -3,14 +3,15 @@
 
 /**
  * print_string - print string into stdout
- * @str: string pointe
+ * @arg: argument list
  *
- * Return: number of chat
+ * Return: number of char
  */
 
-int print_string(char *str)
+int print_string(va_list arg)
 {
 	int count = 0;
+	char *str = va_arg(arg, char *);
 
 	while (*str != '\0')
 	{

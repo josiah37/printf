@@ -16,36 +16,27 @@ int _printf(const char *format, ...)
 	int count = 0;
 	va_list arg;
 
-	if (format == NULL)
-		return (-1);
-
 	va_start(arg, format);
+
+	if (format == NULL)
+		return (0);
 
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
-			format++;
-
+			++format;
 			if (*format == 'c')
 			{
-				char ch = va_arg(arg, int);
-
-				putchar(ch);
-				count++;
+				count = count + print_char(arg);
 			}
-
 			else if (*format == 's')
 			{
-				char *str = va_arg(arg, char *);
-
-				count = print_string(str);
+				count = count + print_string(arg);
 			}
-
-			else if (*format == '%')
+			else if  (*format == '%')
 			{
-				putchar('%');
-				count++;
+				count = count + print_modulo();
 			}
 		}
 		else
@@ -53,8 +44,10 @@ int _printf(const char *format, ...)
 			putchar(*format);
 			count++;
 		}
-		format++;
+
+		++format;
 	}
+
 	va_end(arg);
 	return (count);
 }
