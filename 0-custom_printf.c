@@ -11,50 +11,50 @@
 
 int _printf(const char *format, ...)
 {
-        int count = 0;
-        va_list arg;
+	int count = 0;
+	va_list arg;
 
-        if (format == NULL)
-                return (-1);
-        va_start(arg, format);
+	if (format == NULL)
+		return (-1);
+	va_start(arg, format);
 
-        while (*format != '\0')
-        {
-                if (*format == '%')
-                {
-                        format++;
+	while (*format != '\0')
+	{
+		if (*format == '%')
+		{
+			format++;
 
-                        if (*format == 'c')
-                        {
-                                char ch = va_arg(arg, int);
-                        putchar(ch);
-                        count++;
-                        }
-                        else if (*format == 's')
-                        {
-                                char *str = va_arg(arg, char *);
+			if (*format == 'c')
+			{
+				char ch = va_arg(arg, int);
+					putchar(ch);
+				count++;
+			}
+			else if (*format == 's')
+			{
+				char *str = va_arg(arg, char *);
 
-                                while (*str != '\0')
-                                {
-                                        putchar(*str);
-                                        str++;
-                                        count++;
+				while (*str != '\0')
+				{
+					putchar(*str);
+					str++;
+					count++;
 
-                                }
-                        }
-                        else if (*format == '%')
-                        {
-                                putchar('%');
-                                count++;
-                        }
-                }
-                else
-                {
-                        putchar(*format);
-                        count++;
-                }
-                format++;
-        }
-        va_end(arg);
-        return (count);
+				}
+
+			}
+			else if (*format == '%')
+			{
+				putchar('%');
+				count++;
+			}
+		}
+		else
+		{
+			putchar(count++;
+		}
+		format++;
+	}
+	va_end(arg);
+	return (count);
 }
