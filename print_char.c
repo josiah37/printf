@@ -11,7 +11,7 @@
 
 int print_char(va_list arg)
 {
-	char ch = va_arg(arg, int);
+	int ch = va_arg(arg, int);
 	
 	if (ch == '\0')
 		return (0);
