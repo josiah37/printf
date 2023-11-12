@@ -3,9 +3,11 @@
 #include <unistd.h>
 #include <stdio.h>
 #include "main.h"
+
 /**
  * _printf - print formated string into the standard console (stdout)
- *@format: format string
+ * @format: format string
+ * @str: string
  * Return: number of char printed or -1 incase of failure
  */
 
@@ -16,6 +18,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
+
 	va_start(arg, format);
 
 	while (*format != '\0')
@@ -27,9 +30,11 @@ int _printf(const char *format, ...)
 			if (*format == 'c')
 			{
 				char ch = va_arg(arg, int);
-					putchar(ch);
+
+				putchar(ch);
 				count++;
 			}
+
 			else if (*format == 's')
 			{
 				char *str = va_arg(arg, char *);
@@ -39,10 +44,10 @@ int _printf(const char *format, ...)
 					putchar(*str);
 					str++;
 					count++;
-
 				}
 
 			}
+
 			else if (*format == '%')
 			{
 				putchar('%');
@@ -51,7 +56,8 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			putchar(count++;
+			putchar(*format);
+			count++;
 		}
 		format++;
 	}
