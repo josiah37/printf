@@ -6,7 +6,7 @@
  * Return: 1
  */
 
-int print_modulo()
+int print_modulo(void)
 {
 	/* 37 ASCII value of % */
 
