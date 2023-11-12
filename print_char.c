@@ -12,6 +12,9 @@
 int print_char(va_list arg)
 {
 	int ch = va_arg(arg, int);
+	
+	if (ch == '\0')
+		return (0);
 	putchar(ch);
 
 	return (1);

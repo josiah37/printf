@@ -12,6 +12,9 @@ int print_string(va_list arg)
 {
 	int count = 0;
 	char *str = va_arg(arg, char *);
+	
+	if (str == NULL)
+		return (count);
 
 	while (*str != '\0')
 	{
