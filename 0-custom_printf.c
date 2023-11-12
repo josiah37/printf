@@ -32,19 +32,8 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 's')
 			{
-<<<<<<< HEAD
 				count = count + print_string(arg);
-=======
-				char *str = va_arg(arg, char *);
 
-				while (*str != '\0')
-				{
-					putchar(*str);
-					str++;
-					count++;
-				}
-
->>>>>>> 01d0507920daeaeaa753a59cc1f14d704ff7c9f6
 			}
 			else if  (*format == '%')
 			{
