@@ -20,6 +20,9 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (0);
+	if (*format == '\0')
+		return (0);
+
 	while (*format != '\0')
 	{
 		if (*format == '%')
