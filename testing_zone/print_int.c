@@ -6,7 +6,7 @@ int print_int(va_list arg)
     int num = va_arg(arg, int);
     char buffer[50];
 
-	itoaf(buffer, "%d", num);
+	itoa(buffer, "%d", num);
 
     char *ptr = buffer;
    
