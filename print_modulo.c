@@ -12,5 +12,6 @@ int print_modulo(va_list arg)
 	ch = 37;
 
 	putchar(ch);
+
 	return (1);
 }
