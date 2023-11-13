@@ -23,14 +23,15 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-
-			count = count + specifier(*(++format), arg);
+			++format;
+			count = count + specifier(*format, arg);
 		}
 		else
 		{
 			putchar(*format);
 			count++;
 		}
+		
 		++format;
 	}
 	va_end(arg);
