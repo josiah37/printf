@@ -12,36 +12,16 @@
  */
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0;
 	int count = 0;
 	va_list arg;
-	struct printfSpecifier specifiers[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'d', print_int},
-		{'i', print_int},
-	};
+
 	va_start(arg, format);
-	if (format == NULL)
-		return (-1);
-	while (*format != '\0')
+
+	while (format != NULL && *format != '\0')
 	{
 		if (*format == '%')
 		{
-			++format;
-			if (*format == 'r')
-			{
-				putchar('%');
-				putchar('r');
-				count = count + 2;
-			}
-		for (i = 0; i < (sizeof(specifiers) / (sizeof(specifiers[0]))); i++)
-		{
-			if (*format == specifiers[i].specifier)
-			{
-				count += specifiers[i].printer(arg);
-			}
-		}
+			count = count + specifier(*(++format), arg);
 		}
 		else
 		{

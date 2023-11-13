@@ -25,5 +25,5 @@ int print_char(va_list arg);
 int print_modulo(va_list arg);
 int print_int(va_list arg);
 int print_binary(va_list arg);
-
+int specifier(char ch, va_list arg);
 #endif
