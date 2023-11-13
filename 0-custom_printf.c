@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 		{
 			if (*format == specifiers[i].specifier)
 			{
-				specifiers[i].printer(arg);
+			 	count += specifiers[i].printer(arg);
 				
 			}
 		
