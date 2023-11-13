@@ -22,7 +22,6 @@ int _printf(const char *format, ...)
 		{'s', print_string},
 		{'d', print_int},
 		{'i', print_int},
-		{'%', print_modulo}
 	};
 
 	va_start(arg, format);
