@@ -8,9 +8,11 @@
 
 int print_modulo(va_list arg)
 {
-	/* 37 ASCII value of % */
 
-	va_arg(arg, int);
-/*	putchar(37)*/
+	
+	int ch = va_arg(arg, int);
+	ch = 37;
+	putchar(ch);
+
 	return (1);
 }
