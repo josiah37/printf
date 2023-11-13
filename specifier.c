@@ -36,6 +36,7 @@ int specifier(char ch, va_list arg)
 		count = count + specifiers[3].printer(arg);
 		break;
 	case '\0':
+		count = count + specifiers[2].printer(arg);
 		break;
 	default:
 		putchar('%');
