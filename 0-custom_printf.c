@@ -20,13 +20,11 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
 			++format;
-
 			if (*format == 'c')
 			{
 				count = count + print_char(arg);
@@ -50,7 +48,13 @@ int _printf(const char *format, ...)
 				count = count + print_modulo();
 				putchar(*format);
 			}
+			
+			 else if (*format == 'b')
+                         {
+                                  count = count + print_binary(va_list arg)
+			 }
 		}
+		
 		else
 		{
 		  putchar(*format);
