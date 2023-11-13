@@ -10,15 +10,19 @@
 int print_int(va_list arg)
 {
 	 int count = 0;
+
 	 int num = va_arg(arg, int);
 	 char buffer[50];
 	 int i = 0;
 
+
 	if (num < 0)
 	{
-		 putchar('-');
-		 count++;
-		 num = -num;
+
+	 putchar('-');
+	 count++;
+	 num = -num;
+
 	}
 
 	while (num != 0)
