@@ -13,8 +13,17 @@
 
 int _printf(const char *format, ...)
 {
+	int i = 0;
 	int count = 0;
 	va_list arg;
+
+	struct printfSpecifier specifiers [5] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'d', print_int},
+		{'i', print_int},
+		{'%', print_modulo}
+	};
 
 	va_start(arg, format);
 
@@ -27,35 +36,23 @@ int _printf(const char *format, ...)
 		{
 			++format;
 
-			if (*format == 'c')
+		for (i = 0; i < 5; i++)
+		{
+			if (*format == specifiers[i].specifier)
 			{
-				count = count + print_char(arg);
+				specifiers[i].printer(arg);
+				
 			}
-			else if (*format == 's')
-			{
-				count = count + print_string(arg);
-			}
-			else if  (*format == '%')
-			{
-				count = count + print_modulo();
-			}
+		}
 
-			else if (*format == 'd' || *format == 'i')
-			{
-				count = count + print_int(arg);
-			}
-
-			else if (*format == 'r')
-			{
-				count = count + print_modulo();
-				putchar(*format);
-			}
 		}
 		else
 		{
-		  putchar(*format);
-		  count++;
+			putchar(*format);
+			count++;
+
 		}
+
 		++format;
 	}
 	va_end(arg);
