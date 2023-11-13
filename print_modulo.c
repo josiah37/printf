@@ -6,10 +6,12 @@
  * Return: 1
  */
 
-int print_modulo(void)
+int print_modulo(va_list arg)
 {
-	/* 37 ASCII value of % */
+	
 
-	putchar(37);
+	int ch = va_arg(arg, int);
+	ch = 37;
+	putchar(ch);
 	return (1);
 }
