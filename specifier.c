@@ -3,7 +3,7 @@
 /**
  * specifier - call appropirate fun for a given passed specifier char
  * @ch: specifier symbol (char)
- *
+ * @arg: argument list
  * Return: number of char printed
  */
 

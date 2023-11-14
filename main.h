@@ -6,17 +6,17 @@
 #include <unistd.h>
 
 /**
- *  * struct prinfSpecifier - store specifiers and function
- *   * @specifier: char value
- *    * @printer: fun to call
- *     *
- *      * Description: help us to call appropirate fun
- *       */
+  * struct printfSpecifier - store specifiers and function
+  * @specifier: char value
+  * @printer: fun to call
+  *
+  * Description: help us to call appropirate fun
+  */
 
 struct printfSpecifier
 {
 	char specifier;
-	int(*printer)(va_list arg);
+	int (*printer)(va_list arg);
 };
 
 int _printf(const char *format, ...);
