@@ -18,7 +18,7 @@ int print_string(va_list arg)
 
 	while (*str != '\0')
 	{
-		putchar(*str);
+		_putchar(*str);
 		str++;
 		count++;
 	}

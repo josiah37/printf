@@ -1,6 +1,6 @@
 #include <stdarg.h>
 #include <stdio.h>
-
+#include "main.h"
 /**
  * print_int - prints an integer
  * @arg: argument list
@@ -16,7 +16,7 @@ int print_int(va_list arg)
 	 int i = 0;
 	if (num < 0)
 	{
-		putchar('-');
+		_putchar('-');
 		count++;
 		num = -num;
 	}
@@ -29,7 +29,7 @@ int print_int(va_list arg)
 
 	while (--i >= 0)
 	{
-		putchar(buffer[i]);
+		_putchar(buffer[i]);
 		count++;
 	}
 
