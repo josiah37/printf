@@ -14,11 +14,11 @@ int print_string(va_list arg)
 	char *str = va_arg(arg, char *);
 
 	if (str == NULL || *str == '\0')
-		return (count);
+		return (-1);
 
 	while (*str != '\0')
 	{
-		_putchar(*str);
+		putchar(*str);
 		str++;
 		count++;
 	}

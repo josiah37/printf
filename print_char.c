@@ -15,7 +15,7 @@ int print_char(va_list arg)
 
 	if (ch == '\0')
 		return (-1);
-	_putchar(ch);
+	putchar(ch);
 
 	return (1);
 }

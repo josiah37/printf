@@ -16,7 +16,7 @@ int print_int(va_list arg)
 	 int i = 0;
 	if (num < 0)
 	{
-		_putchar('-');
+		putchar('-');
 		count++;
 		num = -num;
 	}
@@ -29,7 +29,7 @@ int print_int(va_list arg)
 
 	while (--i >= 0)
 	{
-		_putchar(buffer[i]);
+		putchar(buffer[i]);
 		count++;
 	}
 
