@@ -1,20 +1,18 @@
 #include "main.h"
 
 /**
- * specifier - call appropirate fun for a given passed specifier char
+ * specifier - call appropriate function for a given passed specifier char
  * @ch: specifier symbol (char)
  * @arg: argument passed
+ *
  * Return: number of char printed
  */
+
 
 int specifier(char ch, va_list arg)
 {
 	int count = 0;
 
-/**
- * struct printfSpecifier - structre that holds diffrent specifiers
- *
- */
 	struct printfSpecifier  specifiers[] = {
 		{'c', print_char},
 		{'s', print_string},

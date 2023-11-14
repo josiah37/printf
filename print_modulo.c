@@ -9,6 +9,7 @@
 int print_modulo(va_list arg)
 {
 	int ch = va_arg(arg, int);
+
 	ch = 37;
 
 	putchar(ch);
