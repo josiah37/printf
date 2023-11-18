@@ -22,7 +22,7 @@ int specifier(char ch, va_list arg)
 		{'b', print_binary},
 		{'S', print_special_string},
 		{'x', print_hex},
-	/*	{'o', print_octal},*/
+		{'o', print_octal},
 	};
 
 	switch (ch)
@@ -52,11 +52,9 @@ int specifier(char ch, va_list arg)
 		count = count + specifiers[7].printer(arg);
 		break;
 
-/*
 	case 'o':
 		count = count + specifiers[8].printer(arg);
-		break;
-*/
+ 		break;         
 	default:
 		putchar('%');
 		putchar(ch);
